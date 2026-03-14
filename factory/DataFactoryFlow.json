@@ -1,0 +1,9 @@
+{
+	"name": "DataFactoryFlow",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3a7a4531-36c3-41bf-803e-febbaa319e0f",
+		"tenantId": "53e39d05-05e8-410b-b436-141031284797"
+	}
+}
