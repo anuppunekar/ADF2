@@ -1,0 +1,67 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "InputBlobStorageNetflixCsv",
+						"type": "DatasetReference"
+					},
+					"name": "NetflixSource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureDataLakeStorage",
+						"type": "DatasetReference"
+					},
+					"name": "NetflixSink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "DeriveCountryCode"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          title as string,",
+				"          type as string,",
+				"          release_year as string,",
+				"          age_certification as string,",
+				"          runtime as string,",
+				"          genres as string,",
+				"          production_countries as string,",
+				"          seasons as string,",
+				"          imdb_id as string,",
+				"          imdb_score as string,",
+				"          imdb_votes as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> NetflixSource",
+				"NetflixSource derive(CountryCode = iif(production_countries == '[\\'US\\']','1', iif(production_countries == '[\\'GB\\']','44', iif(production_countries == '[\\'IN\\']','91','00')))) ~> DeriveCountryCode",
+				"DeriveCountryCode sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          title as string,",
+				"          production_countries as string,",
+				"          DeriveCountryCode as string",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          title,",
+				"          production_countries,",
+				"          DeriveCountryCode = CountryCode",
+				"     )) ~> NetflixSink1"
+			]
+		}
+	}
+}
