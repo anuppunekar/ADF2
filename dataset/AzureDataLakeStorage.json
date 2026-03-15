@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "processedproducts.csv",
+				"fileName": "processednetflix.csv",
 				"fileSystem": "datalakegen2productstore"
 			},
 			"columnDelimiter": ",",
@@ -20,15 +20,15 @@
 		},
 		"schema": [
 			{
-				"name": "ProductID",
+				"name": "title",
 				"type": "String"
 			},
 			{
-				"name": "ProductName",
+				"name": "production_countries",
 				"type": "String"
 			},
 			{
-				"name": "Category",
+				"name": "DeriveCountryCode",
 				"type": "String"
 			}
 		]
