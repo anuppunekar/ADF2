@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "processedproducts.csv",
+				"fileName": "processednetflix.csv",
 				"fileSystem": "datalakegen2productstore"
 			},
 			"columnDelimiter": ",",
