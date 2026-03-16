@@ -47,9 +47,10 @@
 				"DeriveCountryCode sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
-				"          ProductID as string,",
-				"          Category as string,",
-				"          ProductName as string",
+				"          title as string,",
+				"          production_countries as string,",
+				"          CountryCode as string,",
+				"          countries as string",
 				"     ),",
 				"     umask: 0022,",
 				"     preCommands: [],",
@@ -59,7 +60,8 @@
 				"     mapColumn(",
 				"          title,",
 				"          production_countries,",
-				"          DeriveCountryCode = CountryCode",
+				"          CountryCode,",
+				"          countries = production_countries",
 				"     )) ~> NetflixSink1"
 			]
 		}
