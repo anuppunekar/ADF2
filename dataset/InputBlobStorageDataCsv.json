@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "products1.csv",
+				"fileName": "netflix.csv",
 				"container": "rawdata"
 			},
 			"columnDelimiter": ",",
