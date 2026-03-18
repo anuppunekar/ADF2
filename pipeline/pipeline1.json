@@ -139,38 +139,36 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "ProductID",
+									"name": "title",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "ProductID",
+									"name": "title",
 									"type": "String",
 									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "ProductName",
+									"name": "production_countries",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "ProductName",
+									"name": "production_countries",
 									"type": "String",
 									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Category",
+									"name": "production_countries",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Category",
-									"type": "String",
-									"physicalType": "String"
+									"name": "countries"
 								}
 							}
 						],
