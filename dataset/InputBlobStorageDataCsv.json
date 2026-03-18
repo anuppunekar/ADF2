@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "products1.csv",
+				"fileName": "netflix.csv",
 				"container": "rawdata"
 			},
 			"columnDelimiter": ",",
@@ -20,15 +20,47 @@
 		},
 		"schema": [
 			{
-				"name": "ProductID",
+				"name": "title",
 				"type": "String"
 			},
 			{
-				"name": "ProductName",
+				"name": "type",
 				"type": "String"
 			},
 			{
-				"name": "Category",
+				"name": "release_year",
+				"type": "String"
+			},
+			{
+				"name": "age_certification",
+				"type": "String"
+			},
+			{
+				"name": "runtime",
+				"type": "String"
+			},
+			{
+				"name": "genres",
+				"type": "String"
+			},
+			{
+				"name": "production_countries",
+				"type": "String"
+			},
+			{
+				"name": "seasons",
+				"type": "String"
+			},
+			{
+				"name": "imdb_id",
+				"type": "String"
+			},
+			{
+				"name": "imdb_score",
+				"type": "String"
+			},
+			{
+				"name": "imdb_votes",
 				"type": "String"
 			}
 		]
