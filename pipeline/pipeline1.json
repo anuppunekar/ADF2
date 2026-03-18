@@ -160,16 +160,6 @@
 									"type": "String",
 									"physicalType": "String"
 								}
-							},
-							{
-								"source": {
-									"name": "production_countries",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "countries"
-								}
 							}
 						],
 						"typeConversion": true,
