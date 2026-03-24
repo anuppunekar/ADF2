@@ -32,6 +32,18 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "('LookupCountryMapping').output.value",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []
