@@ -13,7 +13,7 @@
 				"fileName": "countrycode.csv",
 				"container": "rawdata"
 			},
-			"columnDelimiter": "\t",
+			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
