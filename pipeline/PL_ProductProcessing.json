@@ -30,7 +30,7 @@
 						"referenceName": "DS_CountryMapping",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": true
+					"firstRowOnly": false
 				}
 			}
 		],
