@@ -67,6 +67,16 @@
 							"typeProperties": {
 								"source": {
 									"type": "DelimitedTextSource",
+									"additionalColumns": [
+										{
+											"name": "CountryCode",
+											"value": "$$COLUMN:production_countries"
+										},
+										{
+											"name": "countries",
+											"value": "$$COLUMN:production_countries"
+										}
+									],
 									"storeSettings": {
 										"type": "AzureBlobStorageReadSettings",
 										"recursive": true,
@@ -79,7 +89,8 @@
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
+										"type": "AzureBlobFSWriteSettings",
+										"copyBehavior": "MergeFiles"
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
@@ -90,32 +101,6 @@
 								"enableStaging": false,
 								"translator": {
 									"type": "TabularTranslator",
-									"mappings": [
-										{
-											"source": {
-												"name": "title",
-												"type": "String",
-												"physicalType": "String"
-											},
-											"sink": {
-												"name": "title",
-												"type": "String",
-												"physicalType": "String"
-											}
-										},
-										{
-											"source": {
-												"name": "production_countries",
-												"type": "String",
-												"physicalType": "String"
-											},
-											"sink": {
-												"name": "production_countries",
-												"type": "String",
-												"physicalType": "String"
-											}
-										}
-									],
 									"typeConversion": true,
 									"typeConversionSettings": {
 										"allowDataTruncation": true,
@@ -125,7 +110,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "InputBlobStorageDataCsv",
+									"referenceName": "InputBlobStorageNetflixCsv",
 									"type": "DatasetReference"
 								}
 							],
