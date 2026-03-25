@@ -66,8 +66,8 @@
 				"     postCommands: [],",
 				"     mapColumn(",
 				"          title,",
-				"          production_countries,",
-				"          CountryCode,",
+				"          production_countries = CountryCode,",
+				"          CountryCode = production_countries,",
 				"          countries = production_countries",
 				"     )) ~> NetflixSink1"
 			]
