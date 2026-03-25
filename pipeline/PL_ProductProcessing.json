@@ -101,6 +101,54 @@
 								"enableStaging": false,
 								"translator": {
 									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"name": "title",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "title",
+												"type": "String",
+												"physicalType": "String"
+											}
+										},
+										{
+											"source": {
+												"name": "production_countries",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "production_countries",
+												"type": "String",
+												"physicalType": "String"
+											}
+										},
+										{
+											"source": {
+												"name": "CountryCode",
+												"type": "String"
+											},
+											"sink": {
+												"name": "CountryCode",
+												"type": "String",
+												"physicalType": "String"
+											}
+										},
+										{
+											"source": {
+												"name": "countries",
+												"type": "String"
+											},
+											"sink": {
+												"name": "countries",
+												"type": "String",
+												"physicalType": "String"
+											}
+										}
+									],
 									"typeConversion": true,
 									"typeConversionSettings": {
 										"allowDataTruncation": true,
