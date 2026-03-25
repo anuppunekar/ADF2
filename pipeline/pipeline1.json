@@ -173,7 +173,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "InputBlobStorageDataCsv",
+						"referenceName": "InputBlobStorageNetflixCsv",
 						"type": "DatasetReference"
 					}
 				],
