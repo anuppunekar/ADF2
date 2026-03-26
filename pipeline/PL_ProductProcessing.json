@@ -55,7 +55,14 @@
 						{
 							"name": "CopyProducts",
 							"type": "Copy",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Filter1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -173,7 +180,17 @@
 							"name": "Filter1",
 							"type": "Filter",
 							"dependsOn": [],
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"items": {
+									"value": "@item()",
+									"type": "Expression"
+								},
+								"condition": {
+									"value": "@activity('LookupCountryMapping').output",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
