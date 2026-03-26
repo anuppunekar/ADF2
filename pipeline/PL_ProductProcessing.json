@@ -47,7 +47,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('LookupCountryMapping').output.value",
+						"value": "@activity('Filter1').output",
 						"type": "Expression"
 					},
 					"isSequential": false,
@@ -55,7 +55,14 @@
 						{
 							"name": "CopyProducts",
 							"type": "Copy",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Filter1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -172,14 +179,7 @@
 						{
 							"name": "Filter1",
 							"type": "Filter",
-							"dependsOn": [
-								{
-									"activity": "CopyProducts",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
+							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
 								"items": {
@@ -187,7 +187,7 @@
 									"type": "Expression"
 								},
 								"condition": {
-									"value": "@activity('CopyProducts').output",
+									"value": "@activity('LookupCountryMapping').output",
 									"type": "Expression"
 								}
 							}
