@@ -186,11 +186,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('LookupCountryMapping').output",
+						"value": "@item()",
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@item()",
+						"value": "@activity('LookupCountryMapping').output",
 						"type": "Expression"
 					}
 				}
