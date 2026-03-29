@@ -47,7 +47,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('LookupCountryMapping').output.value",
+						"value": "@activity('LookupCountryMapping').output.firstRow.CountryCode",
 						"type": "Expression"
 					},
 					"isSequential": false,
