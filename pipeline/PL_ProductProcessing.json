@@ -55,14 +55,7 @@
 						{
 							"name": "CopyProducts",
 							"type": "Copy",
-							"dependsOn": [
-								{
-									"activity": "Filter1",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
+							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -179,7 +172,14 @@
 						{
 							"name": "Filter1",
 							"type": "Filter",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "CopyProducts",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"userProperties": [],
 							"typeProperties": {
 								"items": {
